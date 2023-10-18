@@ -10,7 +10,7 @@ jobs:
       - name: step1
         uses: actions/checkout@v2
       - name: step2
-        run: env | sort 
+        run: date
 
   job2:
     name: second_job
@@ -19,6 +19,21 @@ jobs:
       - name: step1
         uses: actions/checkout@v2
       - name: step2
-        run: "Get-ChildItem ENV: | Sort-Object Name"
-
+        run: date /t
+  job3:
+    name: third_job
+    runs-on: macos-latest
+    steps:
+      - name: step1
+        uses: actions/checkout@v2
+      - name: step2
+        run: date 
+  job4:
+    name: forth_job
+    runs-on: ubuntu-22.04
+    steps:
+      - name: step1
+        uses: actions/checkout@v2
+      - name: step2
+        run: date 
 
