@@ -19,7 +19,7 @@ jobs:
       - name: step1
         uses: actions/checkout@v2
       - name: step2
-        run: date /t
+        run: date
   job3:
     name: third_job
     runs-on: macos-latest
@@ -31,6 +31,7 @@ jobs:
   job4:
     name: forth_job
     runs-on: ubuntu-22.04
+    needs: [job1,job2,job3]
     steps:
       - name: step1
         uses: actions/checkout@v2
